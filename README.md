@@ -5,11 +5,17 @@ sample management and publishing software for the Teenage Engineering OP-1
 
 0.1 - basics and sets
 ===
-- [ ] scaffold with gulp, famo.us, and atom-shell
-- [ ] load and preview local samples
+- [x] scaffold with gulp, famo.us, and atom-shell
+- [ ] load local samples
 - [ ] detect op-1 connection
-- [ ] build and save "sets" of samples
+- [ ] build a synth "set"
+- [ ] build a drum "set"
 - [ ] upload "sets" to the OP-1
+
+0.11
+===
+- [ ] save and load sets
+- [ ] preview local samples
 - [ ] prompt to rename and save new snapshots
 
 0.2 - sample discovery
