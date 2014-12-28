@@ -21,6 +21,7 @@ gulp.task('injector:css:preprocessor', function () {
   return gulp.src('src/app/index.scss')
     .pipe($.inject(gulp.src([
         'src/{app,components}/**/*.scss',
+        'src/{app,components}/**/*.sass',
         '!src/app/index.scss',
         '!src/app/vendor.scss' 
       ], {read: false}), {

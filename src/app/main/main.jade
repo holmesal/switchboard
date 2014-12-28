@@ -1,24 +1,17 @@
-.container
+.container-fluid
   div(ng-include="'components/navbar/navbar.html'")
-  .jumbotron.text-center
-    h1 &apos;Allo, &apos;Allo! Allooooooo
-    p.lead
-      img(src='assets/images/yeoman.png', alt="I'm Yeoman")
-      br
-      |       Always a pleasure scaffolding your apps.
-    p
-      a.btn.btn-lg.btn-success(ng-href='#') Splendid!
   .row
-    .col-sm-6.col-md-4(ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'")
-      .thumbnail
-        img.pull-right(ng-src='assets/images/{{awesomeThing.logo}}', alt='{{awesomeThing.title}}')
-        .caption
-          h3 {{awesomeThing.title}}
-          p {{awesomeThing.description}}
-          p
-            a(ng-href='{{awesomeThing.url}}') {{awesomeThing.url}}
-  hr
-  .footer
-    p
-      | With &hearts; from
-      a(href='https://twitter.com/Swiip') @Swiip
+    .col-sm-5
+      .header
+        h2 Library
+        .action add
+      div(ng-include="'components/filter/filter.html'")
+
+    .col-sm-2
+      // todo - image for draggables goes here?
+
+    .col-sm-5
+      .header
+        h2 Set
+        .action new
+        .action load
