@@ -12,7 +12,7 @@
           .item(
             ng-repeat="item in items"
             data-drag="true" 
-            jqyoui-draggable="{index:{{$index}}, onStart: 'startedDragging(item)', onStop: 'stoppedDragging(item)', animate: 'true'}"
+            jqyoui-draggable="{index:{{$index}}, onStart: 'startedDragging(item)', onStop: 'stoppedDragging(item)', placeholder: 'keep'}"
             data-jqyoui-options="draggableOptions" 
             ng-model="items"
             ng-class="item.type") {{item.name}}
@@ -28,7 +28,8 @@
       .row.folder(
         ng-repeat="folder in set | orderBy:'name'"
         data-drop="true"
-        jqyoui-droppable="{onOver: 'draggedOver(folder)', onOut: 'draggedOut(folder), multiple: true'}"
+        ng-model="folder.items"
+        jqyoui-droppable="{onOver: 'draggedOver(folder)', onOut: 'draggedOut(folder)', onDrop: 'dropped(folder)'}"
         data-jqyoui-options="droppableOptions" 
       )
         .col-sm-6

@@ -1,5 +1,5 @@
 angular.module "switchboard"
-  .controller "MainCtrl", ($scope) ->
+  .controller "MainCtrl", ($scope, $interval) ->
 
     # FAKE DATA
 
@@ -35,6 +35,9 @@ angular.module "switchboard"
 
     # /FAKE DATA
 
+    $interval ->
+      $scope.items[0].name = "Bass Buzzer #{Date.now()}"
+
 
 
     $scope.draggableOptions = 
@@ -42,28 +45,36 @@ angular.module "switchboard"
       revertDuration: 200
 
     # $scope.droppableOptions = 
-    #   onOver: 'over'
+    #   accept: ->
+    #     console.log 'checking if accepted'
+    #     true
 
     $scope.startedDragging = (ev, ui, item) ->
       $scope.currentlyDragging = item
       item.dragging = true
 
     resetDrag = () ->
+      console.log 'resetting drag'
       $scope.currentlyDragging.dragging = false
       $scope.currentlyDragging = null
 
     $scope.stoppedDragging = (ev, ui, item) ->
-      resetDrag()
+      console.log 'should reset drag here'
+      # resetDrag()
 
     $scope.draggedOver = (ev, ui, folder) ->
       # unless this item is in the list, drop it in
-      unless (item for item in folder.items when item is $scope.currentlyDragging).length > 0
+      unless (item for item in folder.items when item.id is $scope.currentlyDragging.id).length > 0
         console.log 'does not exist, pushing!'
         folder.items.push $scope.currentlyDragging
 
     $scope.draggedOut = (ev, ui, folder) ->
       idx = folder.items.indexOf($scope.currentlyDragging)
+      console.log "dragged out - removing item #{idx}"
       folder.items.splice idx, 1
 
     $scope.dropped = (ev, ui, folder) ->
-      resetDrag 
+      # remove the last item, which is always provisional
+      idx = folder.items.indexOf($scope.currentlyDragging)
+      console.log "dropped - removing item #{idx}"
+      folder.items.splice idx, 1
