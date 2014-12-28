@@ -6,7 +6,7 @@ angular.module "switchboard", [
   'restangular' 
   'ui.router' 
   'ui.bootstrap'
-  'ngDragDrop'
+  'dndLists'
 ]
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
