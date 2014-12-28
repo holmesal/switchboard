@@ -5,7 +5,13 @@
       .header
         h2 Library
         .action add
-      div(ng-include="'components/filter/filter.html'")
+      .row
+        .col-sm-4
+          filters()
+        .col-sm-8
+          .item.synth(data-drag="true" data-jqyoui-options="draggableOptions" jqyoui-draggable) Bass Buzzer
+          .item.synth Bassmonster
+          .item.sample Booma Peow
 
     .col-sm-2
       // todo - image for draggables goes here?
@@ -15,3 +21,19 @@
         h2 Set
         .action new
         .action load
+      .row.folder
+        .col-sm-6
+          .name Cuckoo
+        .col-sm-6
+          .item.synth Bass Buzzer
+          .item.synth Bassmonster
+          .item.sample Booma Peow
+          .item.synth Brinsting
+      .row.folder
+        .col-sm-6
+          .name Cuckoo
+        .col-sm-6
+          .item.synth Bass Buzzer
+          .item.synth Bassmonster
+          .item.sample Booma Peow
+          .item.synth Brinsting

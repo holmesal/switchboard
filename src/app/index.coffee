@@ -1,4 +1,13 @@
-angular.module "switchboard", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap']
+angular.module "switchboard", [
+  'ngAnimate' 
+  'ngCookies' 
+  'ngTouch' 
+  'ngSanitize' 
+  'restangular' 
+  'ui.router' 
+  'ui.bootstrap'
+  'ngDragDrop'
+]
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
       .state "home",

@@ -1,29 +1,33 @@
 $black: #202020;
 $white: #FFFFFF;
 $grey: #929292;
+$green: #81BB84;
+$blue: #7389C3;
 $faded: rgba(255,255,255,0.5);
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
-}
 
 html,body {
   background-color: $black;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "Avenir-Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
+
+// disable selection on all elements, and use the default cursor everywhere
+* {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+    &:hover {
+      cursor: default;
+    }
+}
+
+
 // injector
+@import 'fonts.scss';
 @import 'main/main.sass';
+@import '../components/filters/filters.sass';
 @import '../components/navbar/navbar.sass';
 // endinjector
