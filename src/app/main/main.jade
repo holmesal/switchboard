@@ -9,12 +9,13 @@
         .col-sm-4
           filters()
         .col-sm-8
-          .item(
-            ng-repeat="item in items"
-            dnd-draggable="item"
-            dnd-effect-allowed="move"
-            dnd-moved="list.splice($index,1)"
-            ng-class="getSourceClass(item)") {{item.name}}
+          .scrollview.sources
+            .item(
+              ng-repeat="item in items"
+              dnd-draggable="item"
+              dnd-effect-allowed="move"
+              dnd-moved="list.splice($index,1)"
+              ng-class="getSourceClass(item)") {{item.name}}
 
     .col-sm-2
       // todo - image for draggables goes here?
@@ -25,21 +26,24 @@
     .col-sm-5
       .header
         h2 Set
-        .action new
-        .action load
-      .row.folder(
-        ng-repeat="folder in set | orderBy:'name'"
+        //- .action new
+        //- .action load
+      .scrollview(
+        ng-style="{height: getScrollviewHeight()}"
       )
-        .col-sm-6
-          .name {{folder.name}}
-        .col-sm-6
-          .items(
-            dnd-list="folder.items"
-            dnd-drop="drop(item,folder)"
-          )
-            .item(
-              ng-repeat="item in folder.items"
-              dnd-draggable="item"
-              dnd-effect-allowed="move"
-              dnd-moved="folder.items.splice(folder.items.indexOf(item),1)"
-              ng-class="{synth: item.type=='synth', sample: item.type=='sample', faded: item.dragging}") {{item.name}}
+        .row.folder(
+          ng-repeat="folder in set | orderBy:'name'"
+        )
+          .col-sm-6
+            .name {{folder.name}}
+          .col-sm-6
+            .items(
+              dnd-list="folder.items"
+              dnd-drop="drop(item,folder)"
+            )
+              .item(
+                ng-repeat="item in folder.items"
+                dnd-draggable="item"
+                dnd-effect-allowed="move"
+                dnd-moved="folder.items.splice(folder.items.indexOf(item),1)"
+                ng-class="{synth: item.type=='synth', sample: item.type=='sample', faded: item.dragging}") {{item.name}}

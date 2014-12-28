@@ -1,5 +1,5 @@
 angular.module "switchboard"
-  .controller "MainCtrl", ($scope, $interval) ->
+  .controller "MainCtrl", ($scope, $interval, $window) ->
 
     # FAKE DATA
 
@@ -30,6 +30,7 @@ angular.module "switchboard"
     # $scope.set.push
     #   name: 'zwopwop'
     #   items: $scope.items
+    # for i in [0...100]
     $scope.set.push
       name: 'alonso'
       items: [$scope.items[0]]
@@ -51,6 +52,12 @@ angular.module "switchboard"
       if item.id in $scope.used
         c += ' used'
       return c
+
+    $scope.getScrollviewHeight = ->
+      # tooo - fix this
+      available = $window.innerHeight - 54 - 68 - 50
+      return "#{available}px"
+
 
 
     # Watch for used synths to recalculate quotas and to fade already-used sources

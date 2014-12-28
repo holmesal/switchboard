@@ -18,7 +18,7 @@ h2
 .header
   padding-top: 16px
   padding-bottom: 14px
-  margin-bottom: 15px
+  // margin-bottom: 15px
   border-bottom: 1px solid rgba(235,240,241,0.34)
 
   h2
@@ -52,8 +52,18 @@ h2
   &:hover
     cursor: move
 
+.scrollview
+  overflow-x: hidden
+  overflow-y: scroll
+
+.sources
+  &:first-child
+    margin-top: 15px
+
 .folder
   margin-top: 15px
+  &:first-child
+    margin-top: 15px
   .name
     color: $white
     font-size: 16px
