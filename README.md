@@ -3,13 +3,15 @@ switchboard
 
 sample management and publishing software for the Teenage Engineering OP-1
 
+![switchboard](switchboard.png)
+
 0.1 - basics and sets
 ===
 - [x] scaffold with gulp, famo.us, and atom-shell
-- [ ] load local samples
-- [ ] detect op-1 connection
 - [ ] build a synth "set"
 - [ ] build a drum "set"
+- [ ] load local samples
+- [ ] detect op-1 connection
 - [ ] upload "sets" to the OP-1
 
 0.11
