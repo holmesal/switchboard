@@ -9,9 +9,13 @@
         .col-sm-4
           filters()
         .col-sm-8
-          .item.synth(data-drag="true" data-jqyoui-options="draggableOptions" jqyoui-draggable) Bass Buzzer
-          .item.synth Bassmonster
-          .item.sample Booma Peow
+          .item(
+            ng-repeat="item in items"
+            data-drag="true" 
+            jqyoui-draggable="{index:{{$index}}, onStart: 'startedDragging(item)', onStop: 'stoppedDragging(item)', animate: 'true'}"
+            data-jqyoui-options="draggableOptions" 
+            ng-model="items"
+            ng-class="item.type") {{item.name}}
 
     .col-sm-2
       // todo - image for draggables goes here?
@@ -21,19 +25,18 @@
         h2 Set
         .action new
         .action load
-      .row.folder
+      .row.folder(
+        ng-repeat="folder in set | orderBy:'name'"
+        data-drop="true"
+        jqyoui-droppable="{onOver: 'draggedOver(folder)', onOut: 'draggedOut(folder), multiple: true'}"
+        data-jqyoui-options="droppableOptions" 
+      )
         .col-sm-6
-          .name Cuckoo
+          .name {{folder.name}}
         .col-sm-6
-          .item.synth Bass Buzzer
-          .item.synth Bassmonster
-          .item.sample Booma Peow
-          .item.synth Brinsting
-      .row.folder
-        .col-sm-6
-          .name Cuckoo
-        .col-sm-6
-          .item.synth Bass Buzzer
-          .item.synth Bassmonster
-          .item.sample Booma Peow
-          .item.synth Brinsting
+          .item(
+            ng-repeat="item in folder.items | orderBy:'name'"
+            data-drag="true" 
+            jqyoui-draggable
+            data-jqyoui-options="draggableOptions" 
+            ng-class="{synth: item.type=='synth', sample: item.type=='sample', faded: item.dragging}") {{item.name}}
