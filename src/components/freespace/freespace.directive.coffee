@@ -56,8 +56,10 @@ angular.module "switchboard"
 
       scope.setLabel()
 
-      # $interval ->
-      #   scope.current += 1
-      #   if scope.current > scope.capacity
-      #     scope.current = 0
-      # , 1000
+      $timeout ->
+        $interval ->
+          scope.current += 1
+          if scope.current > scope.capacity
+            scope.current = 0
+        , 1000
+      , Math.random()*3000
