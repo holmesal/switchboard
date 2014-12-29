@@ -49,7 +49,7 @@ angular.module "switchboard"
 
     $scope.getSourceClass = (item) ->
       c = item.type
-      if item.id in $scope.used
+      if item.id in $scope.used.all
         c += ' used'
       return c
 
@@ -65,10 +65,17 @@ angular.module "switchboard"
       console.log 'set changed!'
       console.log set
       # Calculate the used synths
-      $scope.used = []
+      $scope.used =
+        all: []
+        synths: []
+        samples: []
       for folder in set
         for item in folder.items
-          $scope.used.push item.id
+          $scope.used.all.push item.id
+          if item.type is 'sample'
+            $scope.used.samples.push item.id 
+          else if item.type is 'synth'
+            $scope.used.synths.push item.id
       console.log $scope.used
     , true
 

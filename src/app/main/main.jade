@@ -50,9 +50,19 @@
 
   .freespaceContainer
     freespace(
-      current="used.length"
-      noun="sample"
+      current="used.synths.length"
+      capacity="100"
+      noun="'synth'"
+      height="4"
+      color="'#81BB84'"
+      layout="'top'"
     )
-    //- freespace(
-    //-   current="used.length"
-    //- )
+
+    freespace(
+      current="used.samples.length"
+      capacity="26"
+      noun="'sample'"
+      height="4"
+      color="'#7389C3'"
+      layout="'bottom'"
+    )

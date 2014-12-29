@@ -1,23 +1,19 @@
-fa-app.wrapper
+fa-app.wrapper(
+  ng-style="{height: height}"
+)
   fa-modifier(
     fa-origin="[0.5,1]"
     fa-align="[0.5,1]"
     fa-proportions="[1,0.5]"
-    fa-size="[undefined,{{height}}]"
+    fa-size="[undefined,true]"
   )
     //- full-width background bar
     fa-modifier(
       fa-opacity="0.21"
+      fa-size="[undefined,{{height}}]"
     )
       fa-surface(
-        fa-background-color="'#81BB84'"
-      )
-    //- colored foreground bar
-    fa-modifier(
-      fa-proportions="[progress.get(),1]"
-    )
-      fa-surface(
-        fa-background-color="'#81BB84'"
+        fa-background-color="color"
       )
 
     //- spacers
@@ -26,36 +22,47 @@ fa-app.wrapper
     )
       fa-modifier(
         ng-repeat="divider in dividers"
-        fa-translate="[1.5,0,0]"
-        fa-size="[3,{{height}}]"
-        fa-origin="[1,0.5]"
-        fa-align="[1,0.5]"
+        fa-translate="[1,0,0]"
+        fa-size="[2,{{height}}]"
+        fa-origin="[1,0]"
+        fa-align="[1,0]"
       )
         fa-surface(
           fa-background-color="'#202020'"
           ng-if="$index != dividers.length - 1"
         )
 
+    //- colored foreground bar
+    fa-modifier(
+      fa-proportions="[progress.get(),1]"
+      fa-size="[undefined,{{height}}]"
+    )
+      fa-surface(
+        fa-background-color="color"
+      )
+      
     //- indicator
     fa-modifier(
       fa-origin="[0.5,0.5]"
       fa-align="[progress.get(),0.5]"
-      fa-translate="[0,-17,0]"
+      fa-translate="layouts.indicator.translate[layout]"
       fa-size="[true,true]"
     )
       fa-modifier(
         fa-origin="[0.5,0.5]"
-        fa-align="[0.5,0.5]")
+        fa-align="[0.5,0.5]"
+        fa-rotate-z="layouts.indicator.rotate[layout]"
+      )
         fa-surface(
           fa-size="[true,true]"
         )
-          .arrow-down
+          .arrow-down(ng-style="{borderTopColor: color}")
 
     //- value
     fa-modifier(
       fa-origin="[0.5,1]"
       fa-align="[progress.get(),1]"
-      fa-translate="[0,-36,0]"
+      fa-translate="layouts.value.translate[layout]"
     )
       fa-surface(
         fa-size="[true,10]"
