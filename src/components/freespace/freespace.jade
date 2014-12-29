@@ -1,0 +1,63 @@
+fa-app.wrapper
+  fa-modifier(
+    fa-origin="[0.5,1]"
+    fa-align="[0.5,1]"
+    fa-proportions="[1,0.5]"
+    fa-size="[undefined,{{height}}]"
+  )
+    //- full-width background bar
+    fa-modifier(
+      fa-opacity="0.21"
+    )
+      fa-surface(
+        fa-background-color="'#81BB84'"
+      )
+    //- colored foreground bar
+    fa-modifier(
+      fa-proportions="[progress.get(),1]"
+    )
+      fa-surface(
+        fa-background-color="'#81BB84'"
+      )
+
+    //- spacers
+    fa-grid-layout(
+      fa-options="gridOptions"
+    )
+      fa-modifier(
+        ng-repeat="divider in dividers"
+        fa-translate="[1.5,0,0]"
+        fa-size="[3,{{height}}]"
+        fa-origin="[1,0.5]"
+        fa-align="[1,0.5]"
+      )
+        fa-surface(
+          fa-background-color="'#202020'"
+          ng-if="$index != dividers.length - 1"
+        )
+
+    //- indicator
+    fa-modifier(
+      fa-origin="[0.5,0.5]"
+      fa-align="[progress.get(),0.5]"
+      fa-translate="[0,-17,0]"
+      fa-size="[true,true]"
+    )
+      fa-modifier(
+        fa-origin="[0.5,0.5]"
+        fa-align="[0.5,0.5]")
+        fa-surface(
+          fa-size="[true,true]"
+        )
+          .arrow-down
+
+    //- value
+    fa-modifier(
+      fa-origin="[0.5,1]"
+      fa-align="[progress.get(),1]"
+      fa-translate="[0,-36,0]"
+    )
+      fa-surface(
+        fa-size="[true,10]"
+        class="value"
+      ) {{label}}

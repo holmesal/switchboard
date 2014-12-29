@@ -47,3 +47,12 @@
                 dnd-effect-allowed="move"
                 dnd-moved="folder.items.splice(folder.items.indexOf(item),1)"
                 ng-class="{synth: item.type=='synth', sample: item.type=='sample', faded: item.dragging}") {{item.name}}
+
+  .freespaceContainer
+    freespace(
+      current="used.length"
+      noun="sample"
+    )
+    //- freespace(
+    //-   current="used.length"
+    //- )

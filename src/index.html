@@ -10,8 +10,11 @@
     <!-- build:css({.tmp,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/famous-angular/dist/famous-angular.css" />
     <!-- endbower -->
     <!-- endbuild -->
+
+    <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
     
 
     <!-- build:css({.tmp,src}) styles/app.css -->
@@ -41,6 +44,8 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
+    <script src="bower_components/famous/dist/famous-global.js"></script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -54,13 +59,16 @@
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+    <script src="../bower_components/famous-angular/dist/famous-angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <!-- inject:js -->
     <script src="app/index.js"></script>
+    <script src="components/progress/progress.directive.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/freespace/freespace.directive.js"></script>
     <script src="components/filters/filters.directive.js"></script>
     <script src="app/main/main.controller.js"></script>
     <!-- endinject -->

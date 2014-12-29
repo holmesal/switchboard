@@ -31,3 +31,9 @@ sample management and publishing software for the Teenage Engineering OP-1
 - [ ] save and restore tape tracks
 - [ ] trim whitespace
 - [ ] link account and upload to soundcloud
+
+
+notes
+===
+
+passable progress bars currently require a patch to the famo.us GridLayout to [remove the rounding here](https://github.com/Famous/famous/blob/master/src/views/GridLayout.js#L57)

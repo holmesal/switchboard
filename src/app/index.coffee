@@ -7,6 +7,7 @@ angular.module "switchboard", [
   'ui.router' 
   'ui.bootstrap'
   'dndLists'
+  'famous.angular'
 ]
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider

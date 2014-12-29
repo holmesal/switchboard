@@ -90,11 +90,11 @@ angular.module "switchboard"
         console.info 'not allowing drop because item is already in list'
         return false
 
-    # $scope.draggableOptions = 
+    # $scope.draggableOptions =
     #   revert: 'invalid'
     #   revertDuration: 200
 
-    # $scope.droppableOptions = 
+    # $scope.droppableOptions =
     #   accept: ->
     #     console.log 'checking if accepted'
     #     true
