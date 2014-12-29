@@ -1,6 +1,8 @@
 angular.module "switchboard"
   .controller "MainCtrl", ($scope, $interval, $window) ->
 
+    ipc = require 'ipc'
+
     # FAKE DATA
 
     $scope.items = [
@@ -73,6 +75,9 @@ angular.module "switchboard"
       # tooo - fix this
       available = $window.innerHeight - 54 - 68 - 50
       return "#{available}px"
+
+    $scope.openFilepicker = ->
+      ipc.send 'openFilepicker'
 
 
 

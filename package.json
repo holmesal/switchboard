@@ -5,7 +5,7 @@
     "gulp-download-atom-shell": "0.0.4",
     "gulp-shell": "^0.2.11"
   },
-  "main": "src/atom.js",
+  "main": ".tmp/app/atom.js",
   "devDependencies": {
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~2.0.0",

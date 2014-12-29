@@ -16,6 +16,7 @@ sample management and publishing software for the Teenage Engineering OP-1
 
 0.11
 ===
+- [ ] drag and drop to add files
 - [ ] save and load sets
 - [ ] preview local samples
 - [ ] prompt to rename and save new snapshots
