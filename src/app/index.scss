@@ -35,8 +35,8 @@ body {
 
 // injector
 @import 'fonts.scss';
-@import '../components/filters/filters.sass';
-@import '../components/freespace/freespace.sass';
-@import '../components/navbar/navbar.sass';
 @import 'main/main.sass';
+@import '../components/freespace/freespace.sass';
+@import '../components/filters/filters.sass';
+@import '../components/navbar/navbar.sass';
 // endinjector

@@ -20,7 +20,7 @@ angular.module "switchboard"
 
       scope.dividers = [0...scope.capacity]
 
-      scope.gridOptions = 
+      scope.gridOptions =
         dimensions: [scope.dividers.length, 1]
         gutterSize: [0,0]
 
@@ -28,9 +28,9 @@ angular.module "switchboard"
       scope.current = 0 unless scope.current
       scope.layout = 'top' unless scope.layout
 
-      scope.layouts = 
+      scope.layouts =
         indicator:
-          translate: 
+          translate:
             top: [0,-17,0]
             bottom: [0,17,0]
           rotate:
@@ -43,7 +43,7 @@ angular.module "switchboard"
 
       scope.$watch 'current', (current) ->
         target = scope.current/scope.capacity
-        console.info "moving to to #{current} ---> #{target}"
+        # console.info "moving to to #{current} ---> #{target}"
         scope.progress.set target,
           duration: duration
           curve: 'easeInOut'

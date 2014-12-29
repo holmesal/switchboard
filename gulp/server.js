@@ -13,6 +13,8 @@ var middleware = require('./proxy');
 function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
 
+  browser = 'an invalid string to prevent the browser from opening'
+
   var routes = null;
   if(baseDir === 'src' || (util.isArray(baseDir) && baseDir.indexOf('src') !== -1)) {
     routes = {
@@ -21,15 +23,17 @@ function browserSyncInit(baseDir, files, browser) {
   }
 
   browserSync.instance = browserSync.init(files, {
-    startPath: '/',
+    // startPath: '/',
     server: {
       baseDir: baseDir,
       middleware: middleware,
       routes: routes
     },
-    browser: browser
+    browser: browser,
+    notify: false
   }, function(err, bs){
-    qrcode.generate(bs.options.urls.external);
+    // qrcode.generate(bs.options.urls.external);
+    gulp.start('atom')
   });
 
 }

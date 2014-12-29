@@ -50,7 +50,7 @@ gulp.task('injector:css', ['styles'], function () {
 });
 
 gulp.task('scripts', function () {
-  return gulp.src('src/{app,components}/**/*.coffee')
+  return gulp.src(['src/{app,components}/**/*.coffee','src/atom.coffee'])
     .pipe($.coffeelint())
     .pipe($.coffeelint.reporter())
     .pipe($.coffee())

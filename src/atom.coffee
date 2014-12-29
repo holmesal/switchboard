@@ -15,14 +15,17 @@ app.on 'window-all-closed', ->
 # ready set go
 app.on 'ready', ->
 
+  console.log 'ello ello there wasssup'
+
   # bootstrap the main window
 
   mainWindow = new BrowserWindow
-    width: 960, 
-    height: 700, 
+    width: 960,
+    height: 700,
     'min-width': 900,
     'min-height': 600,
     frame: false
+    fullscreen: false
 
   mainWindow.loadUrl 'http://localhost:3000'
 
