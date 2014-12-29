@@ -23,6 +23,22 @@ angular.module "switchboard"
       type: 'sample'
       name: 'z-band'
       id: 4
+    ,
+      type: 'sample'
+      name: 'apollo'
+      id: 5
+    ,
+      type: 'sample'
+      name: 'wassup'
+      id: 6
+    ,
+      type: 'synth'
+      name: 'overtones'
+      id: 7
+    ,
+      type: 'sample'
+      name: 'lols'
+      id: 8
     ]
 
     $scope.set = []
